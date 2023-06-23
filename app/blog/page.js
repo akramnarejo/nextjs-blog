@@ -15,7 +15,6 @@ async function getPosts() {
 const Page = () => {
   const router = useRouter();
   const userInfo = useStore((state) => state?.userInfo ?? {});
-  console.log("user info: ", userInfo);
   const [posts, setPosts] = useState({});
 
   useEffect(() => {
@@ -46,7 +45,7 @@ const Page = () => {
                 <div className="flex flex-col gap-2">
                   <p className="text-sm text-gray-500">- {post.author}</p>
                   <Link
-                    href={`/blog/post/${post.id}?pagePath=${post.pagePath}`}
+                    href={`/blog/post/${post.websiteAdmin}?pagePath=${post.pagePath}`}
                     className="text-2xl hover:text-gray-500"
                   >
                     {post.title.en}
